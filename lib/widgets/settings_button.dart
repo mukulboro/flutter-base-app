@@ -6,8 +6,7 @@ class SettingsButton extends StatelessWidget {
   final IconData icon;
 
   const SettingsButton(
-      {required this.label, required this.widget, required this.icon, Key? key})
-      : super(key: key);
+      {required this.label, required this.widget, required this.icon, super.key});
 
   @override
   Widget build(BuildContext context) {

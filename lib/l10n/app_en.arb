@@ -1,4 +1,5 @@
 {
+    "@@locale": "en",
     "mainScreenTitle": "This is the main screen",
     "@mainScreenTitle": {
         "description": "The title of the main screen"

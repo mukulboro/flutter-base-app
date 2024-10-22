@@ -4,8 +4,7 @@ class Loader extends StatelessWidget {
   final Future futureFunction;
   final Widget child;
 
-  const Loader({required this.futureFunction, required this.child, Key? key})
-      : super(key: key);
+  const Loader({required this.futureFunction, required this.child, super.key});
 
   @override
   Widget build(BuildContext context) {

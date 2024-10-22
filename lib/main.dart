@@ -9,32 +9,26 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
-  // SharedPreferences.setMockInitialValues({});
+
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
+  // Get language and theme config from shared preferences if available
   final String? languageCode = prefs.getString('language');
   final String? theme = prefs.getString('theme');
   runApp(
     MultiProvider(
       providers: [
+        // if shared preferences is empty, default values (english lang and system theme) will be used
         ChangeNotifierProvider(create: (context) => ThemeProvider(theme: theme ?? 'system')),
         ChangeNotifierProvider(create: (context) => LanguageProvider(languageCode: languageCode ?? 'en'))
       ],
-      child: MainApp(
-        languageCode: languageCode,
-        theme: theme,
-      ),
+      child: const MainApp(),
     ),
   );
 }
 
 class MainApp extends StatefulWidget {
-  final String? languageCode;
-  final String? theme;
-
   const MainApp({
-    required this.languageCode,
-    required this.theme,
     super.key,
   });
 
@@ -56,6 +50,7 @@ class _MainAppState extends State<MainApp> {
       supportedLocales: const [Locale('en'), Locale('ne')],
       theme: lightThemeData,
       darkTheme: darkThemeData,
+      // get locale and theme from providers
       locale: Locale(context.watch<LanguageProvider>().languageCode),
       home: const MainScreen(),
       themeMode: context.watch<ThemeProvider>().getTheme(),
