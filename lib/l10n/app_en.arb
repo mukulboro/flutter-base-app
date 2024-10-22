@@ -1,0 +1,34 @@
+{
+    "mainScreenTitle": "This is the main screen",
+    "@mainScreenTitle": {
+        "description": "The title of the main screen"
+    },
+    "settingsButtonText": "Settings",
+    "@settingsButtonText": {
+        "description": "The text of the settings button"
+    },
+    "settingsScreenTitle": "This is the Settings screen",
+    "@settingsScreenTitle": {
+        "description": "The title of the settings screen"
+    },
+    "settingsLanguageLabel": "Language",
+    "@settingsLanguageLabel": {
+        "description": "The label of the language setting"
+    },
+    "settingsThemeLabel": "Theme",
+    "@settingsThemeLabel": {
+        "description": "The label of the theme setting"
+    },
+    "settingsSystemTheme": "System",
+    "@settingsSystemTheme": {
+        "description": "The label for System Theme"
+    },
+    "settingsDarkTheme": "Dark",
+    "@settingsDarkTheme": {
+        "description": "The label for Dark Theme"
+    },
+    "settingsLightTheme": "Light",
+    "@settingsLightTheme": {
+        "description": "The label for Light Theme"
+    }
+}

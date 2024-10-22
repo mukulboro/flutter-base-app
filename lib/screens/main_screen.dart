@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'settings_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("This is the main screen"),
+            Text(AppLocalizations.of(context)!.mainScreenTitle),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -24,7 +25,7 @@ class _MainScreenState extends State<MainScreen> {
                       MaterialPageRoute(
                           builder: (context) => const SettingsScreen()));
                 },
-                child: const Text("Settings"))
+                child: Text(AppLocalizations.of(context)!.settingsButtonText)),
           ],
         ),
       ),
